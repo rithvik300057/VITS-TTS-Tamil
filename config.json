@@ -1,0 +1,71 @@
+{
+  "output_path": "outputs/tamil_vits",
+  "run_name": "tamil_vits_fast",
+
+  "use_cuda": true,
+  "mixed_precision": false,
+  "precision": "float32",
+
+  "num_loader_workers": 2,
+  "num_eval_loader_workers": 1,
+
+  "batch_size": 6,
+  "eval_batch_size": 3,
+
+  "epochs": 100,
+
+  "optimizer": "Adam",
+  "optimizer_args": {
+    "lr": 0.003,
+    "betas": [0.9, 0.999]
+  },
+
+  "lr_scheduler": "ExponentialLR",
+  "lr_scheduler_args": {
+    "gamma": 0.98
+  },
+
+  "warmup_steps": 200,
+
+  "datasets": [
+    {
+      "name": "tamil_full",
+      "path": "datasets",
+      "meta_file_train": "metadata.csv",
+      "meta_file_val": "metadata_val.csv",
+      "formatter": "ljspeech"
+    }
+  ],
+
+  "audio": {
+    "sample_rate": 22050,
+    "win_length": 1024,
+    "hop_length": 256,
+    "num_mels": 80
+  },
+
+  "model": "vits",
+
+  "bucket_batch": true,
+  "min_seq_len": 60,
+  "max_seq_len": 2000,
+
+  "characters": {
+    "characters_class": "TTS.tts.models.vits.VitsCharacters",
+    "pad": "_",
+    "eos": "~",
+    "bos": "^",
+    "characters": "ஂஃஅஆஇஈஉஊஎஏஐஒஓஔகஙசஜஞடணதநனபமயரறலளழவஷஸஹாிீுூெேைொோௌ்",
+    "punctuations": ".,!?; "
+  },
+
+  "trainer": {
+    "save_checkpoints": true,
+    "keep_all_best": true,
+    "save_every_steps": 1000,
+    "flush_mem_per_epoch": true,
+    "log_interval": 500,
+    "restore_scheduler": false,
+    "restore_optimizer": false
+  }
+}

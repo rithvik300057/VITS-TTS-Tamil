@@ -5,6 +5,7 @@ git clone https://github.com/coqui-ai/TTS.git
 Python version required : 3.10 :-
 python3.10 -m venv vits_env
 source vits_env/bin/activate
+
 Install TTS
 
 metadata.csv format: <file_name>|<speaker_name>|<text>

@@ -8,7 +8,7 @@ source vits_env/bin/activate
 
 Install TTS
 
-metadata.csv format:'<file_name>|<speaker_name>|<text>'
+metadata.csv format:**<file_name>|<speaker_name>|<text>**
 
 Convert the dataset .wav audio files into 22050 HZ
 

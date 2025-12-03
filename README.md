@@ -12,6 +12,16 @@ metadata.csv format:`<file_name>|<speaker_name>|<text>`
 
 Convert the dataset .wav audio files into 22050 HZ
 
+dataset format:
+
+  datasets:
+  
+    wavs
+    
+    metadata.csv
+    
+    metadata_val.csv
+    
 Training: python TTS/TTS/bin/train_tts.py --config_path config.json
 
 Inference: python inference_tamil.py
